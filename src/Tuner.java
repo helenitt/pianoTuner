@@ -3,11 +3,11 @@
  */
 public class Tuner {
     private String name;
-    private String location;
+    private Enum location;
     private String phone;
-    private String rating;
+    private Enum rating;
 
-    public Tuner(String name, String location, String phone, String rating) {
+    public Tuner(String name, Enum location, String phone, Enum rating) {
         this.name = name;
         this.location = location;
         this.phone = phone;
@@ -15,11 +15,7 @@ public class Tuner {
     }
 
     public String getName() { return name; }
-    public String getLocation() {
-        return location;
-    }
+    public Enum getLocation() { return location; }
     public String getPhone() { return phone; }
-    public String getRating() {
-        return rating;
-    }
+    public Enum getRating() { return rating; }
 }
