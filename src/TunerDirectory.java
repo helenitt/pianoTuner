@@ -2,14 +2,14 @@
  * Created by Helen on 15/11/2016.
  */
 
+import java.util.List;
 import java.util.LinkedList;
-import java.util.Iterator;
 
 public class TunerDirectory {
-    private LinkedList tuners;
+    private List<Tuner> tuners;
 
     public TunerDirectory() {
-        tuners = new LinkedList();
+        tuners = new LinkedList<>();
     }
 
     public void addTuner(String name, Enum location, String phone, Enum rating) {
@@ -18,15 +18,16 @@ public class TunerDirectory {
     }
 
     public Tuner getTuner(String name) {
-        for(Iterator i = tuners.iterator();i.hasNext(); ) {
-            Tuner tuner = (Tuner) i.next();
+        for (Tuner tuner : tuners) {
+            if(tuner.getName().equals(name)) {
+                return tuner;
+            }
         }
         return null;
     }
 
     public Tuner search(Tuner searchTuner) {
-        for(Iterator i = tuners.iterator(); i.hasNext(); ) {
-            Tuner tuner = (Tuner)i.next();
+        for (Tuner tuner : tuners) {
             // Name not included, that's what we're looking for
             // Phone is not included, it's unique
             Enum location = searchTuner.getLocation();
