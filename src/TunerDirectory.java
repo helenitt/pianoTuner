@@ -29,10 +29,12 @@ public class TunerDirectory {
             // Name not included, that's what we're looking for
             // Phone is not included, it's unique
             String location = searchTuner.getLocation();
-            if((location != null) && (!location.equals("")) && //refactor extract method isSpecified
+            // if has a value & does not match the tuners location, continue
+            if((location != null) && (!location.equals("")) && 
                 !location.equals(tuner.getLocation()))
                 continue;
             String rating = searchTuner.getRating();
+            // if has a value & does not match the tuners location, continue
             if((rating != null) && (!rating.equals("")) &&
                 !rating.equals(tuner.getRating()))
                 continue;
