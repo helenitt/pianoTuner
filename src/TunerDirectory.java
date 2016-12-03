@@ -8,8 +8,8 @@ import java.util.LinkedList;
 public class TunerDirectory {
     private List<Tuner> tuners;
 
-    public TunerDirectory() {
-        tuners = new LinkedList<>();
+    public TunerDirectory(List<Tuner> tuners) {
+        this.tuners = tuners;
     }
 
     public void addTuner(String name, Enum location, String phone, Enum rating) {
@@ -26,20 +26,16 @@ public class TunerDirectory {
         return null;
     }
 
-    public Tuner search(Tuner searchTuner) {
+    public List<Tuner> search(Tuner searchTuner) {
+        List<Tuner> tunersFound = new LinkedList<>();
         for (Tuner tuner : tuners) {
             // Name not included, that's what we're looking for
             // Phone is not included, it's unique
-            Enum location = searchTuner.getLocation();
-            // if has a value & does not match the tuners location, continue
-            if((location != null) && !location.equals(tuner.getLocation()))
-                continue;
-            Enum rating = searchTuner.getRating();
-            // if has a value & does not match the tuners location, continue
-            if((rating != null) && !rating.equals(tuner.getRating()))
-                continue;
-            return tuner;
+            if(searchTuner.getLocation().equals(tuner.getLocation()))
+                tunersFound.add(tuner);
+            if(searchTuner.getRating().equals(tuner.getRating()))
+                tunersFound.add(tuner);
         }
-        return null;
+        return tunersFound;
     }
 }

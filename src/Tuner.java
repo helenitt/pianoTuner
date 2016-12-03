@@ -14,8 +14,16 @@ public class Tuner {
         this.rating = rating;
     }
 
-    public String getName() { return name; }
-    public Enum getLocation() { return location; }
-    public String getPhone() { return phone; }
-    public Enum getRating() { return rating; }
+    public String getName() {
+        return name;
+    }
+    public Enum getLocation() {
+        return location;
+    }
+    public String getPhone() {
+        return phone;
+    }
+    public Enum getRating() {
+        return rating;
+    }
 }

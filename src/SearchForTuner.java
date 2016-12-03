@@ -1,18 +1,29 @@
 /**
  * Created by Helen on 15/11/2016.
  */
+
+import java.util.List;
+import java.util.LinkedList;
+import java.util.Collection;
+import java.util.LinkedHashSet;
+
 public class SearchForTuner {
     public static void main(String[] args) {
-        TunerDirectory directory = new TunerDirectory();
+        TunerDirectory directory = new TunerDirectory(new LinkedList<>());
         createDirectory(directory);
 
         Tuner userSearch = new Tuner("", Location.KILLARNEY, "", Rating.EXCELLENT);
-        Tuner tunersFound = directory.search(userSearch);
+        List<Tuner> tunersFound = directory.search(userSearch);
 
-        if(tunersFound != null) {
-            System.out.println("Search Results: " + tunersFound.getName() +
-                    " " + tunersFound.getLocation() + " " + tunersFound.getPhone() +
-                    " " + tunersFound.getRating());
+        if(!tunersFound.isEmpty()) {
+            Collection<Tuner> uniqueResults = new LinkedHashSet<>(tunersFound);
+            for (Tuner found : uniqueResults) {
+                if (found != null) {
+                    System.out.println("Search Results: " + found.getName() +
+                            " " + found.getLocation() + " " + found.getPhone() +
+                            " " + found.getRating());
+                }
+            }
         }
         else {
             System.out.println("Sorry, there were no results");
