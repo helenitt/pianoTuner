@@ -12,18 +12,17 @@ public class SearchForTuner {
         TunerDirectory directory = new TunerDirectory(new LinkedList<>());
         createDirectory(directory);
 
-        Tuner userSearch = new Tuner("", Location.KILLARNEY, "", Rating.EXCELLENT);
+        Tuner userSearch = new Tuner(Location.KILLARNEY, Rating.EXCELLENT, new Person("", ""));
         List<Tuner> tunersFound = directory.search(userSearch);
 
+        System.out.println("Search Results: ");
         if(!tunersFound.isEmpty()) {
             Collection<Tuner> uniqueResults = new LinkedHashSet<>(tunersFound);
-            for (Tuner found : uniqueResults) {
-                if (found != null) {
-                    System.out.println("Search Results: " + found.getName() +
-                            " " + found.getLocation() + " " + found.getPhone() +
-                            " " + found.getRating());
+
+                if (uniqueResults != null) {
+                    System.out.println(uniqueResults.toString());
                 }
-            }
+
         }
         else {
             System.out.println("Sorry, there were no results");
@@ -31,17 +30,17 @@ public class SearchForTuner {
     }
 
     private static void createDirectory(TunerDirectory directory) {
-        directory.addTuner("Tom Jones", Location.TRALEE, "0871234567", Rating.EXCELLENT);
-        directory.addTuner("Ann Jones", Location.KILLARNEY, "0872345678", Rating.GOOD);
-        directory.addTuner("Katie Griffiths", Location.TRALEE, "0861111111", Rating.MODERATE);
-        directory.addTuner("Helen OBrien", Location.DINGLE, "0872222222", Rating.EXCELLENT);
-        directory.addTuner("Helen Flynn", Location.DINGLE, "0873333333", Rating.GOOD);
-        directory.addTuner("Barry White", Location.KILLARNEY, "0874444444", Rating.BAD);
-        directory.addTuner("Paddy Lyons", Location.TRALEE, "0875555555", Rating.MODERATE);
-        directory.addTuner("Joe Brosnan", Location.KILLARNEY, "0876666666", Rating.MODERATE);
-        directory.addTuner("Mike Quirke", Location.TRALEE, "0867777777", Rating.EXCELLENT);
-        directory.addTuner("Ann OBrien", Location.KILLARNEY, "0878888888", Rating.EXCELLENT);
-        directory.addTuner("Sue Doon", Location.DINGLE, "0879999999", Rating.BAD);
-        directory.addTuner("Tim Stone", Location.TRALEE, "0871919191", Rating.BAD);
+        directory.addTuner(Location.TRALEE, Rating.EXCELLENT, new Person("Tom Jones", "0871234567"));
+        directory.addTuner(Location.KILLARNEY, Rating.GOOD, new Person("Ann Jones", "0872345678"));
+        directory.addTuner(Location.TRALEE, Rating.MODERATE, new Person("Katie Griffiths", "0861111111"));
+        directory.addTuner(Location.DINGLE, Rating.EXCELLENT, new Person("Helen OBrien", "0872222222"));
+        directory.addTuner(Location.DINGLE, Rating.GOOD, new Person("Helen Flynn", "0873333333"));
+        directory.addTuner(Location.KILLARNEY, Rating.BAD, new Person("Barry White", "0874444444"));
+        directory.addTuner(Location.TRALEE, Rating.MODERATE, new Person("Paddy Lyons", "0875555555"));
+        directory.addTuner(Location.KILLARNEY, Rating.MODERATE, new Person("Joe Brosnan", "0876666666"));
+        directory.addTuner(Location.TRALEE, Rating.EXCELLENT, new Person("Mike Quirke", "0867777777"));
+        directory.addTuner(Location.KILLARNEY, Rating.EXCELLENT, new Person("Ann OBrien", "0878888888"));
+        directory.addTuner(Location.DINGLE, Rating.BAD, new Person("Sue Doon", "0879999999"));
+        directory.addTuner(Location.TRALEE, Rating.BAD, new Person("Tim Stone", "0871919191"));
     }
 }

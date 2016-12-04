@@ -12,8 +12,8 @@ public class TunerDirectory {
         this.tuners = tuners;
     }
 
-    public void addTuner(String name, Enum location, String phone, Enum rating) {
-        Tuner tuner = new Tuner(name, location, phone, rating);
+    public void addTuner(Enum location, Enum rating, Person person) {
+        Tuner tuner = new Tuner(location, rating, person);
         tuners.add(tuner);
     }
 
