@@ -2,12 +2,15 @@
  * Created by Helen on 14/11/2016.
  */
 public class Tuner {
-    private String name;
-    private Enum location;
-    private String phone;
-    private Enum rating;
+    final String name;
+    final Location location;
+    String phone;
+    Rating rating;
 
-    public Tuner(String name, Enum location, String phone, Enum rating) {
+    public Tuner(final String name,
+                 final Location location,
+                 String phone,
+                 Rating rating) {
         this.name = name;
         this.location = location;
         this.phone = phone;
@@ -25,5 +28,11 @@ public class Tuner {
     }
     public Enum getRating() {
         return rating;
+    }
+
+    public boolean mathches(Tuner matchSearch) {
+        if(location != matchSearch.location)
+            return false;
+        return rating == matchSearch.rating;
     }
 }

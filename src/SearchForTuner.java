@@ -12,16 +12,17 @@ public class SearchForTuner {
         TunerDirectory directory = new TunerDirectory(new LinkedList<>());
         createDirectory(directory);
 
-        Tuner userSearch = new Tuner("", Location.KILLARNEY, "", Rating.EXCELLENT);
+        Tuner userSearch = new Tuner("", Location.TRALEE, "", Rating.EXCELLENT);
         List<Tuner> tunersFound = directory.search(userSearch);
 
         if(!tunersFound.isEmpty()) {
             Collection<Tuner> uniqueResults = new LinkedHashSet<>(tunersFound);
+            System.out.println("Search Results: ");
             for (Tuner found : uniqueResults) {
                 if (found != null) {
-                    System.out.println("Search Results: " + found.getName() +
-                            " " + found.getLocation() + " " + found.getPhone() +
-                            " " + found.getRating());
+                    System.out.println(found.getName() + " " + found.getLocation() +
+                            " " + found.getPhone() + " " + found.getRating());
+
                 }
             }
         }
