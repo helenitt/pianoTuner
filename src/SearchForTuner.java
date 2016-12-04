@@ -13,24 +13,13 @@ public class SearchForTuner {
         createDirectory(directory);
 
         Tuner userSearch = new Tuner("", Location.TRALEE, "", Rating.EXCELLENT);
-        List<Tuner> tunersFound = directory.fullMatchSearch(userSearch);
-        List<Tuner> partialTunersFound = directory.partialMatchSearch(userSearch);
+        List<Tuner> tunersFound = directory.search(userSearch);
 
         if(!tunersFound.isEmpty()) {
             Collection<Tuner> uniqueResults = new LinkedHashSet<>(tunersFound);
-            Collection<Tuner> uniquePartialResults = new LinkedHashSet<>(partialTunersFound);
 
             System.out.println("Search Results: ");
             for (Tuner found : uniqueResults) {
-                if (found != null) {
-                    System.out.println(found.getName() + " " + found.getLocation() +
-                            " " + found.getPhone() + " " + found.getRating());
-
-                }
-            }
-
-            System.out.println("\nPartial Search Results: ");
-            for (Tuner found : uniquePartialResults) {
                 if (found != null) {
                     System.out.println(found.getName() + " " + found.getLocation() +
                             " " + found.getPhone() + " " + found.getRating());
