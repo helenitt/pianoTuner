@@ -26,12 +26,23 @@ public class TunerDirectory {
         return null;
     }
 
-    public List<Tuner> search(Tuner searchTuner) {
+    public List<Tuner> fullMatchSearch(Tuner searchTuner) {
         List<Tuner> tunersFound = new LinkedList<>();
         for (Tuner tuner : tunerList) {
             // Name not included, that's what we're looking for
             // Phone is not included, it's unique
-            if(tuner.mathches(searchTuner))
+            if(tuner.fullMathches(searchTuner))
+                tunersFound.add(tuner);
+        }
+        return tunersFound;
+    }
+
+    public List<Tuner> partialMatchSearch(Tuner searchTuner) {
+        List<Tuner> tunersFound = new LinkedList<>();
+        for (Tuner tuner : tunerList) {
+            // Name not included, that's what we're looking for
+            // Phone is not included, it's unique
+            if(tuner.partialMathches(searchTuner))
                 tunersFound.add(tuner);
         }
         return tunersFound;

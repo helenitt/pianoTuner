@@ -30,9 +30,11 @@ public class Tuner {
         return rating;
     }
 
-    public boolean mathches(Tuner matchSearch) {
-        if(location != matchSearch.location)
-            return false;
-        return rating == matchSearch.rating;
+    public boolean fullMathches(Tuner matchSearch) {
+        return location == matchSearch.location && rating == matchSearch.rating;
+    }
+
+    public boolean partialMathches(Tuner matchSearch) {
+        return location == matchSearch.location || rating == matchSearch.rating;
     }
 }
