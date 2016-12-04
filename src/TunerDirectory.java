@@ -6,19 +6,19 @@ import java.util.List;
 import java.util.LinkedList;
 
 public class TunerDirectory {
-    private List<Tuner> tuners;
+    private List<Tuner> tunerList;  //POOR NAMES CODE SMELL
 
     public TunerDirectory(List<Tuner> tuners) {
-        this.tuners = tuners;
+        this.tunerList = tuners;
     }
 
-    public void addTuner(Enum location, Enum rating, Person person) {
-        Tuner tuner = new Tuner(location, rating, person);
-        tuners.add(tuner);
+    public void addTuner(String name, Enum location, String phone, Enum rating) {
+        Tuner tuner = new Tuner(name, location, phone, rating);
+        tunerList.add(tuner);
     }
 
     public Tuner getTuner(String name) {
-        for (Tuner tuner : tuners) {
+        for (Tuner tuner : tunerList) {
             if(tuner.getName().equals(name)) {
                 return tuner;
             }
@@ -28,7 +28,7 @@ public class TunerDirectory {
 
     public List<Tuner> search(Tuner searchTuner) {
         List<Tuner> tunersFound = new LinkedList<>();
-        for (Tuner tuner : tuners) {
+        for (Tuner tuner : tunerList) {
             // Name not included, that's what we're looking for
             // Phone is not included, it's unique
             if(searchTuner.getLocation().equals(tuner.getLocation()))
