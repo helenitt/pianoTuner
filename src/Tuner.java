@@ -2,10 +2,10 @@
  * Created by Helen on 14/11/2016.
  */
 public class Tuner {
-    final String name;
-    final Location location;
-    String phone;
-    Rating rating;
+    private final String name;
+    private final Location location;
+    private String phone;
+    private Rating rating;
 
     public Tuner(final String name,
                  final Location location,
@@ -20,13 +20,13 @@ public class Tuner {
     public String getName() {
         return name;
     }
-    public Enum getLocation() {
+    public Location getLocation() {
         return location;
     }
     public String getPhone() {
         return phone;
     }
-    public Enum getRating() {
+    public Rating getRating() {
         return rating;
     }
 

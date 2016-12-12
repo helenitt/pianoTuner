@@ -8,12 +8,16 @@ import static org.junit.Assert.*;
 public class TunerTest {
     @Test
     public void getName() throws Exception {
+        Tuner tuner = new Tuner("Joe Bloggs", Location.TRALEE, "0881234567", Rating.EXCELLENT);
 
+        assertEquals("Joe Bloggs", tuner.getName());
     }
 
     @Test
     public void getLocation() throws Exception {
+        Tuner tuner = new Tuner("Joe Bloggs", Location.TRALEE, "0881234567", Rating.EXCELLENT);
 
+        assertEquals(Location.TRALEE, tuner.getLocation());
     }
 
     @Test

@@ -1,0 +1,156 @@
+commit 1fb5b36a305734a84c9013f84fdda016041cda7c
+Author: Helen O'Brien <helen>
+Date:   Fri Dec 9 14:35:48 2016 +0000
+
+    Commit Test classes created
+    
+    created TunerTest.java
+    created TunerDirectoryTest.java
+    changed Tuner variable declarations made private
+
+commit 42abef2fa4b1f65f0aab13dfdc435db61bedc500
+Author: Helen O'Brien <helen>
+Date:   Sun Dec 4 21:15:16 2016 +0000
+
+    Commit Test classes created
+    
+    created TunerTest.java
+    created TunerDirectoryTest.java
+    created SearchForTunerTest.java
+    test should have been done from start
+
+commit bf1efcf322fa91a319a43f5b947d37262b09f1da
+Author: Helen O'Brien <helen>
+Date:   Sun Dec 4 21:05:28 2016 +0000
+
+    Commit restored to one search full match of search results to correct DRY
+    
+    adapted SearchForTuner to do one search
+    deleted partialMatchSearch() to TunerDirectory
+    restored fullMathches() in Tuner to matches
+    deleted partialMathches() to Tuner
+    removed comments from search() in TunerDirectory
+
+commit ae56dffb5d8c7ae34e4a237524a4f10c637f704c
+Author: Helen O'Brien <helen>
+Date:   Sun Dec 4 20:53:09 2016 +0000
+
+    Commit adaptations so that full search results of Location & Ratings and partial search results of Location or Ratings are returned
+    
+    adapted SearchForTuner to do search for partial matches also
+    added partialMatchSearch() to TunerDirectory
+    adapted fullMathches() in Tuner
+    added partialMathches() to Tuner
+    simplified the return statement of both fullMathches() & partialMathches()
+
+commit 23a510e6d17ebb54497debb63e3b98e1f5c01bb4
+Author: Helen O'Brien <helen>
+Date:   Sun Dec 4 17:59:33 2016 +0000
+
+    Commit applied DIY principle Tuner matches with search itself
+    
+    extracted matches() from search() in TunerDirectory
+    added matches() method to Tuner
+    changed poor naming TunerDirectory tuner to tunerList more explanatory
+    changed TunerDirectory  to final
+    changed all Tuner fields to package private
+    changed fields name and location to final
+    updated Enum fields to type specific Location and Rating
+    updated Enum parameters to type specific Location and Rating
+    updated Search Results output outside loop so it prints only once
+
+commit b183f2bb2eacdfd2ab97e3796be414a247c85797
+Author: Helen O'Brien <helen>
+Date:   Sun Dec 4 16:50:28 2016 +0000
+
+    Commit returned to state prior to encapsulation example
+    
+    Tuner depending on Person is not solid
+    deleted Person class
+    returned name and phone extracted from Tuner
+    updated constructor in Tuner
+    updated addTuner in TunerDirectory
+    updated output in SearchForTuner
+
+commit fd54d8b77826a7357bbcbff6392ebe4091b820ca
+Author: Helen O'Brien <helen>
+Date:   Sun Dec 4 15:24:15 2016 +0000
+
+    Commit example of encapsulation
+    
+    added Person class
+    updated name and phone extracted from Tuner
+    updated constructor in Tuner
+    updated addTuner in TunerDirectory
+    updated output in SearchForTuner
+
+commit a86abb9ee6f7943c95d288ca4d66d8414eaad7b4
+Author: Helen O'Brien <helen>
+Date:   Sat Dec 3 18:19:19 2016 +0000
+
+    Commit continued implementation of Generics for Type Safety
+    
+    problem; TunerDirectory.search() returning only one result
+    problem rectified: List added to TunerDirectory.search() to return multiple results
+    added Type to TunerDirectory constructor
+    result TunerDirectory now returns type safe collection
+    changed TunerDirectory.search() for loop to for each
+    simplified the SearchForTuner if comparison statements
+    added tunersFound to LinkedHashSet to avoid duplicates in results
+    added appropriate import statements
+    updated Tuner getters and setters from single line
+
+commit f888b3d0e7d49aba63cdf1a79df226b67e3a4c21
+Author: Helen O'Brien <helen>
+Date:   Sat Dec 3 17:26:24 2016 +0000
+
+    Commit Generics added to give Type Safety
+    
+    added Generic Type <Tuner> to TunerDirectory
+    changed TunerDirectory LinkedList to List for flexibility
+    removed (Tuner) casting from getTuner()
+    reformatted get() methods from being single line
+    changed TunerDirectory.getTuner() for loop to for each
+    added import List to TunerDirectory
+    removed import Iterator from TunerDirectory
+
+commit 8f5bd9a5fbb6cdfa05d10a4e31506ac0f374316f
+Merge: 9d42f7e b91f315
+Author: Helen O'Brien <helen>
+Date:   Sat Dec 3 16:29:26 2016 +0000
+
+    Commit Value Safety Issue added Enum Classes
+    
+    added new Enum Class for Location
+    added new Enum Class for Rating
+    changed values in TunerDirectory to enum values
+    removed empty String checks in SearchForTuner if comparison statements
+
+commit 9d42f7e50b8100691969d6bb92189ee680e9a7d7
+Author: Helen O'Brien <helen>
+Date:   Sat Dec 3 16:23:06 2016 +0000
+
+    Commit Value Safety Issue added Enum Classes
+    
+    added new Enum Class for Location
+    added new Enum Class for Rating
+    changed values in TunerDirectory to enum values
+    removed empty String checks in SearchForTuner if comparison statements
+
+commit b91f3150a0c68d8c184fa7300da65fc03cdddaeb
+Author: helenitt <helen.obrien2@students.ittralee.ie>
+Date:   Sat Dec 3 16:09:20 2016 +0000
+
+    Update TunerDirectory.java
+    
+    Edited comment errrors
+
+commit c3ac90c124a605382330acacc2e9228d545d3718
+Author: Helen O'Brien <helen>
+Date:   Sat Dec 3 15:30:30 2016 +0000
+
+    Initial Commit of pianoTuner Project
+    
+    tuner.java
+    tunerDirectory.java
+    searchForTuner.java
